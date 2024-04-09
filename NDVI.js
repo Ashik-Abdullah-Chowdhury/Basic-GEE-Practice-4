@@ -16,11 +16,11 @@ var b4=Dataset.select("SR_B4")
 var ndvi=b5.subtract(b4).divide(b5.add(b4)).rename("NDVI")
 print(ndvi)
 Map.centerObject(upzla)
-Map.addLayer(ndvi.clip(upzla),{min:-1,max:1,palette:["blue","green","yellow"]},"NDVI")
+Map.addLayer(ndvi.clip(upzla),{min:0,max:0.3,palette:["blue","white","green"]},"NDVI")
 
 // NDVI min-max
 var stat=ndvi.reduceRegion({
   reducer:ee.Reducer.minMax(),
   geometry:upzla,
-  scale:10})
+  scale:30})
 print(stat)

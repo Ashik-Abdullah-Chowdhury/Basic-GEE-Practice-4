@@ -13,7 +13,10 @@ var ndwi=b3.subtract(b8).divide(b3.add(b8)).rename("NDWI")
 var ndwiparams={
   min:-1,
   max:1,
-  palette: ['blue', 'white', 'green']
+  palette: ['#ff0004', '#868686', '#774b0a',
+           '#10d22c','#ffff52','#818181',
+           '#c0c0c0','#f1f1f1','#bac5eb','#52fff9'],
+  scale:10         
 }
 Map.addLayer(ndwi.clip(upzla),ndwiparams,"NDWI")
 Map.centerObject(upzla)
